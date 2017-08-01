@@ -102,6 +102,7 @@ function XslProcessor(xslUrl,docNSUri) {
         s =  s.replace(/.*\?\>/,"");//hack for opera to delete <?xml ... ?>
       return s;
     } catch(e){
+      alert(e.stack);
       alert(mbGetMessage("exceptionTransformingDoc", this.xslUrl));
       alert("XSL="+(new XMLSerializer()).serializeToString(this.xslDom));
       alert("XML="+(new XMLSerializer()).serializeToString(xmlNode));
